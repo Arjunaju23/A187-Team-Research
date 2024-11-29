@@ -26,3 +26,22 @@ h <- hist(
   ylab = "Frequency",
   col = c("lightgreen"),
 )
+
+y <- df$step_count # Dependent variable
+
+# Calculate statistics
+dtMin <- min(y)   # Minimum value present in the data set
+dtMax <- max(y)   # Maximum value present in the data set
+dtMean <- mean(y) # Calculating the mean of the dependent variable
+dtSd <- sd(y)     # Calculating the standard deviation
+
+# Generate normal distribution line
+x <- seq(dtMin, dtMax, 1) # Create a sequence from min to max
+yn <- dnorm(x, mean = dtMean, sd = dtSd) 
+
+# Scale normal distribution to match histogram
+box.size <- diff(h$mids[1:2]) * length(y)
+yn <- yn * box.size
+
+# Add the normal distribution line
+lines(x, yn, col = "blue")
