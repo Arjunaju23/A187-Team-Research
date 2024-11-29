@@ -1,3 +1,7 @@
+library(tidyverse)  # Initializing the tidyverse library
+
+pdf("Visualization.pdf")  # Save the visualization to a PDF
+
 df <- read.csv("25.csv")  # Reading the CSV file and storing the dataset in the df variable
 
 x <- df$calories_burned # Independent variable
@@ -45,3 +49,5 @@ yn <- yn * box.size
 
 # Add the normal distribution line
 lines(x, yn, col = "blue")
+
+dev.off()
