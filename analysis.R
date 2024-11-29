@@ -1,3 +1,4 @@
+library(tidyverse)
 df <- read.csv("25.csv")
 
 x <- df$step_count # Dependent variable
