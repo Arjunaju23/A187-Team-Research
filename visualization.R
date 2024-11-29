@@ -16,3 +16,13 @@ plot(
 
 model <- lm(y ~ x, data = df) # Fitting a linear model to the cleaned data
 abline(model, col = "blue")         # Adding the regression line
+
+#histogram
+h <- hist(
+  df$step_count, # Dependent variable
+  breaks = 35,
+  main = "Histogram showing the frequency of step count",
+  xlab = "Step Count (in thousands)",
+  ylab = "Frequency",
+  col = c("lightgreen"),
+)
